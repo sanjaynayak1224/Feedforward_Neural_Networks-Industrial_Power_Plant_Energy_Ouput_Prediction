@@ -53,6 +53,56 @@ I built a Feedforward Artificial Neural Network (ANN) using PyTorch's `nn.Sequen
 * **Second Hidden Layer**: 6 nodes with a `ReLU` activation.
 * **Output Layer**: 1 node (fully connected linear layer) to output the predicted energy output (`PE`).
 
+```mermaid
+graph LR
+    subgraph Input [Input Layer]
+        I1((AT))
+        I2((V))
+        I3((AP))
+        I4((RH))
+    end
+
+    subgraph Hidden 1 [Hidden Layer 1]
+        H1_1(( ))
+        H1_2(( ))
+        H1_3(( ))
+        H1_4(( ))
+        H1_5(( ))
+        H1_6(( ))
+    end
+
+    subgraph Hidden 2 [Hidden Layer 2]
+        H2_1(( ))
+        H2_2(( ))
+        H2_3(( ))
+        H2_4(( ))
+        H2_5(( ))
+        H2_6(( ))
+    end
+
+    subgraph Output [Output Layer]
+        O1((PE))
+    end
+
+    %% Connections
+    I1 & I2 & I3 & I4 --- H1_1 & H1_2 & H1_3 & H1_4 & H1_5 & H1_6
+    H1_1 & H1_2 & H1_3 & H1_4 & H1_5 & H1_6 --- H2_1 & H2_2 & H2_3 & H2_4 & H2_5 & H2_6
+    H2_1 & H2_2 & H2_3 & H2_4 & H2_5 & H2_6 --- O1
+
+    %% Styling
+    classDef inputStyle fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px;
+    classDef hiddenStyle fill:#efebe9,stroke:#b0bec5,stroke-width:1px;
+    classDef outputStyle fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+
+    class I1,I2,I3,I4 inputStyle;
+    class H1_1,H1_2,H1_3,H1_4,H1_5,H1_6 hiddenStyle;
+    class H2_1,H2_2,H2_3,H2_4,H2_5,H2_6 hiddenStyle;
+    class O1 outputStyle;
+
+    linkStyle default stroke:#cfd8dc,stroke-width:1px;
+```
+
+
 I compiled the model using PyTorch's `MSELoss` (Mean Squared Error) to measure performance and the `Adam` optimizer to adjust network weights during backpropagation.
 
 ### Training & Checkpointing
