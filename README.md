@@ -10,6 +10,28 @@ An end-to-end deep learning project built to predict the net hourly electrical e
 
 ---
 
+## 📊 Dataset Information
+
+The dataset used in this project is the **Combined Cycle Power Plant (CCPP)** dataset, originally collected by researchers *Heysem Kaya* and *Pinar Tüfekci* and hosted on the **UCI Machine Learning Repository**.
+
+### Context & Characteristics
+* **Plant Design**: The plant is a Combined Cycle Power Plant composed of a 150MW gas turbine and an 80MW steam turbine in a joint cycle. 
+* **Data Collection Period**: Contains **9,568 hourly observations** collected over a 6-year period (2006 to 2011) when the power plant was set to work with full load.
+* **Objective**: The goal is to predict the net hourly electrical energy output (`PE`) based on environmental variables that affect the thermodynamic cycle efficiency of the gas and steam turbines.
+
+### Feature Specification
+The dataset contains four input features and one target output:
+
+| Parameter | Description | Operational Range | Role |
+| :--- | :--- | :---: | :---: |
+| **`AT`** | Ambient Temperature (°C) | 1.81°C — 37.11°C | Input Feature |
+| **`V`** | Exhaust Vacuum (cm Hg) | 25.36 — 81.56 cm Hg | Input Feature |
+| **`AP`** | Ambient Pressure (mbar) | 992.89 — 1033.30 mbar | Input Feature |
+| **`RH`** | Relative Humidity (%) | 25.56% — 100.16% | Input Feature |
+| **`PE`** | Produced Energy (Megawatts - MW) | 420.26 — 495.76 MW | **Target Output** |
+
+---
+
 ## 🔍 The Pipeline & Modeling Workflow
 
 The project follows a structured workflow to clean, preprocess, batch, train, and validate the neural network. Here is the general structure:
