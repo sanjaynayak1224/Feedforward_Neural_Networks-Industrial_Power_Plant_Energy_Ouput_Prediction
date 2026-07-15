@@ -84,6 +84,8 @@ I compiled the model using PyTorch's `MSELoss` (Mean Squared Error) to measure p
 ### Training & Checkpointing
 I ran the training loop for **100 epochs**. At the end of each epoch, I ran the model on the test dataset to calculate validation loss. To avoid saving a model that might overfit, I set up a checkpointing check: the script only saved the model weights to `best_model.pt` when the validation loss reached a new historical low. After training, I loaded these optimal weights back into the model for final evaluation.
 
+![Loss Comparison Curve](loss_comparison.png)
+
 ---
 
 ## 📊 Model Evaluation & Results
@@ -96,6 +98,8 @@ Here are the performance metrics I recorded for the best model:
 | **Root Mean Squared Error (RMSE)** | 4.4652 MW | **4.2945 MW** |
 | **Mean Absolute Error (MAE)** | 3.5128 MW | **3.4046 MW** |
 | **$R^2$ Score (Coefficient of Determination)** | 93.18% | **93.55%** |
+
+![Actual vs Predicted PE Scatter Plot](actual_vs_predicted.png)
 
 ### 💡 What the numbers tell us
 * **Strong predictive power ($R^2$ of 93.55%)**: Our model explains over 93.5% of the variance in electrical energy output, showing that the four environmental features have a very strong relationship with plant performance.
